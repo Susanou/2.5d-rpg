@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://okenpv2ppget"]
+
+[ext_resource type="PackedScene" uid="uid://ws66abykfnh7" path="res://Scenes/Characters/Player/player.tscn" id="1_s0gyx"]
+
+[node name="Main" type="Main" unique_id=149683941]
+
+[node name="Player" parent="." unique_id=370824106 instance=ExtResource("1_s0gyx")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=327498458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.048587)
