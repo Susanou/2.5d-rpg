@@ -41,6 +41,7 @@ impl INode for PlayerIdleState {
         if direction != Vector2::ZERO {
             let mut machine = self.character_node.bind().state_machine_node.clone();
             godot_print!("Sending switch to MOVE");
+            let _guard = self.base_mut();
             machine.bind_mut().switch_state::<PlayerMoveState>();
         }
     }

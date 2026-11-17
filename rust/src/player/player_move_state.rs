@@ -39,8 +39,9 @@ impl INode for PlayerMoveState {
     fn physics_process(&mut self, _delta: f64) {
         let direction = self.character_node.bind().direction;
         if direction == Vector2::ZERO {
-            let mut machine = self.character_node.bind().state_machine_node.clone();
+            let mut machine = self.character_node.clone().bind_mut().state_machine_node.clone();
             godot_print!("Sending switch to IDLE");
+            let _guard = self.base_mut();
             machine.bind_mut().switch_state::<PlayerIdleState>();
         }
     }
